@@ -1,2 +1,2 @@
-# ReMaskNet
-<font size="30">Code is coming soon!</font>
+
+# Code is coming soon!
