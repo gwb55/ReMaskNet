@@ -23,30 +23,26 @@ def setup_seed(seed):
 def parse_args():
     parser = argparse.ArgumentParser(description="ReMaskNet Training & Testing Framework")
 
-    parser.add_argument('--mode', type=str, default='train', choices=['train', 'test', 'all'],
-                        help='运行模式: train(训练), test(测试), all(训练完直接测试)')
-    parser.add_argument('--seed', type=int, default=0, help='随机种子，默认0')
-    parser.add_argument('--classes', type=str, nargs='+', default=['bottle'],
-                        help='MVTecAD 类别列表，例如: --classes bottle cable screw')
-    parser.add_argument('--device', type=str, default='cuda:0', help='计算设备 (e.g., cuda:0, cpu)')
-    parser.add_argument('--save_root', type=str, default='./saved_models', help='模型保存路径')
-    parser.add_argument('--data_root', type=str, default='/root/dfs/gwb/gwb/SimpleNetFi/data4/MVTec_ad',
-                        help='MVTec数据集根目录')
-    parser.add_argument('--dtd_path', type=str, default='/root/dfs/gwb/gwb/SimpleNetFi/data4/dtd/images',
-                        help='DTD纹理数据集路径')
-    parser.add_argument('--result_root', type=str, default='./results', help='测试结果/可视化保存路径')
+    parser.add_argument('--mode', type=str, default='train', choices=['train', 'test', 'all'])
+    parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--classes', type=str, nargs='+', default=['bottle'])
+    parser.add_argument('--device', type=str, default='cuda:0')
+    parser.add_argument('--save_root', type=str, default='./saved_models')
+    parser.add_argument('--data_root', type=str, default='./MVTec_ad')
+    parser.add_argument('--dtd_path', type=str, default='./dtd/images')
+    parser.add_argument('--result_root', type=str, default='./results')
 
-    parser.add_argument('--feature_layers', type=int, nargs='+', default=[2, 3], help='特征提取层级')
-    parser.add_argument('--target_embed_dim', type=int, default=1536, help='目标嵌入维度')
-    parser.add_argument('--image_size', type=int, default=288, help='重心剪裁后输入图像尺寸')
-    parser.add_argument('--resize', type=int, default=329, help='Resize尺寸')
+    parser.add_argument('--feature_layers', type=int, nargs='+', default=[2, 3])
+    parser.add_argument('--target_embed_dim', type=int, default=1536)
+    parser.add_argument('--image_size', type=int, default=288)
+    parser.add_argument('--resize', type=int, default=329)
 
-    parser.add_argument('--epochs', type=int, default=200, help='训练总Epoch数')
-    parser.add_argument('--batch_size', type=int, default=4, help='Batch Size')
-    parser.add_argument('--lr', type=float, default=0.0002, help='学习率')
-    parser.add_argument('--iteration', type=int, default=3, help='Phase 2 内部迭代次数')
-    parser.add_argument('--eval_epoch', type=int, default=2, help='每多少个Epoch评估一次')
-    parser.add_argument('--eval_iteration', type=int, default=3, help='评估时的迭代次数')
+    parser.add_argument('--epochs', type=int, default=200)
+    parser.add_argument('--batch_size', type=int, default=4)
+    parser.add_argument('--lr', type=float, default=0.0003)
+    parser.add_argument('--iteration', type=int, default=3)
+    parser.add_argument('--eval_epoch', type=int, default=2)
+    parser.add_argument('--eval_iteration', type=int, default=3)
 
     args = parser.parse_args()
     return args
@@ -121,4 +117,5 @@ if __name__ == "__main__":
         run_testing(args)
     elif args.mode == 'all':
         run_training(args)
+
         run_testing(args)
