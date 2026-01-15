@@ -36,7 +36,7 @@ Default expected paths:
 
 ## 🚀 Usage
 
-The `main.py` script handles both training and testing.
+The `main.py` script handles both training and testing. You can run it directly using Python or use the provided shell script `run.sh` for batch management.
 
 ### 1. Training
 Train on specific classes (e.g., `bottle`). Results are saved to `./saved_models`.
@@ -56,6 +56,19 @@ Evaluate the model. This will generate a summary CSV and visualizations in `./re
 Run training immediately followed by testing:
 
     python main.py --mode all --classes bottle --epochs 200
+
+### 4. Using the Shell Script (`run.sh`)
+For easier configuration management and batch execution, use the provided `run.sh` script.
+
+**Step 1: Modify the script**
+Open `run.sh` in a text editor to adjust the parameters:
+* **Paths**: Update `SAVE_ROOT` and `RESULT_ROOT` to your preferred directories.
+* **Classes**: Edit the `--classes` line to select the objects you want to run (e.g., `bottle cable capsule`).
+* **Mode**: Change `--mode` to `train`, `test`, or `all`.
+
+**Step 2: Run the script**
+
+    bash run.sh
 
 ## ⚙️ Arguments
 
