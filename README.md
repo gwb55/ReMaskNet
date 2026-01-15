@@ -96,9 +96,9 @@ It contains the AUROC and AP metrics for both Image-level and Pixel-level detect
 
 | Class | Img_AUROC | Img_AP | Pix_AUROC | Pix_AP |
 | :--- | :--- | :--- | :--- | :--- |
-| bottle | 0.9980 | 0.9950 | 0.9850 | 0.9720 |
+| bottle | 0.xxxx | 0.xxxx | 0.xxxx | 0.xxxx |
 | ... | ... | ... | ... | ... |
-| **AVERAGE**| **0.99xx** | **0.99xx**| **0.98xx** | **0.97xx**|
+| **AVERAGE**| **0.xxxx** | **0.xxxx**| **0.xxxx** | **0.xxxx**|
 
 ### Visualizations
 Visual results are saved in:
