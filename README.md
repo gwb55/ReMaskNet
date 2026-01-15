@@ -1,6 +1,12 @@
-# ReMaskNet: Reconstruction & Masking Network for Anomaly Detection
+# ReMaskNet: Regenerate Mask Network for Industrial Anomaly Detection and Segmentation
 
-This repository contains the PyTorch implementation of **ReMaskNet**, a framework for unsupervised anomaly detection and localization using the MVTec AD dataset. The model utilizes a multi-stage approach involving feature reconstruction and adaptive masked autoencoding (MAE) to detect anomalies.
+[![CASE 2025](https://img.shields.io/badge/CASE-2025-4b44ce.svg)](https://ieeexplore.ieee.org/)
+
+This repository contains the official PyTorch implementation of **ReMaskNet**, as presented in the paper **"ReMaskNet: Regenerate Mask Network for Industrial Anomaly Detection and Segmentation"**, which has been accepted by **IEEE CASE 2025**.
+
+ReMaskNet is a novel unsupervised anomaly detection framework that synergizes the strengths of **reconstruction-based, synthesis-based, and embedding-based** methods. To address the challenges of subtle defect detection and unstable masking in existing approaches, we propose a **Dual-level Anomaly Synthesis** strategy (incorporating both image-level and feature-level synthesis) and an **Iterative Feature Inpainting** module.
+
+Unlike traditional methods that rely on random masks, ReMaskNet utilizes a reconstruction-guided segmentation map as an initial mask and refines features through an iterative optimization process. Extensive experiments on the **MVTec AD** dataset demonstrate that ReMaskNet outperforms existing state-of-the-art methods, achieving **99.6% Image-AUROC** and **98.4% Pixel-AUROC**.
 
 ## 📂 Project Structure
 
